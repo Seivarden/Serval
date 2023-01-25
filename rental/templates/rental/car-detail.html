@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ car.year }} {{ car.manufacturer }} {{ car.model }}</h1>
+    <p><strong>Owner:</strong> {{ car.owner }}</p>
+    <p><strong>Color:</strong> {{ car.color }}</p>
+    <p><strong>License Plate:</strong> {{ car.license_plate }}</p>
+    <p><strong>Daily Rate:</strong> Kshs. {{ car.daily_rate }}</p>
+    <a href="">Reserve/Hire</a>
+    <hr>
+    <h3>Insurance Information</h3> 
+    <p><strong>Provider: </strong>{{ car.insurance }}</p>
+    <p {% if insurance_expired %}class="text-warning"{% endif %}><strong>Expiry Date: </strong>{{ car.insurance_expiry_date }}</p>
+    <ul>
+
+    {% for booking in car.booking_set.all %}
+        <hr>
+        <h3>{{ booking.created_by }}</h3>
+        <li><strong>Start: </strong> {{ booking.start_date }}</li>
+        <li><strong>End: </strong>{{ booking.end_date }}</li>
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}

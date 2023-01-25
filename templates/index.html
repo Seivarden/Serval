@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+<head>
+    {% block title %}<title>Serval - Home</title>{% endblock %}
+</head>
+
+{% block content %}
+    <h1>Homepage</h1>
+    <div class="container">
+        <div class="centered">
+            <ul><a href="{% url 'rental:booking-list' %}">View all Bookings</a></ul>
+            <ul><a href="{% url 'rental:car-list' %}">View all Cars</a></ul>
+            <ul>Total Cars: {{ num_cars }}</ul>
+            <ul>Total Users: {{ num_users }}</ul>
+            <ul>Total Bookings: {{ num_bookings }}</ul>
+            <h2>Categories</h2>
+            <a href="{% url 'rental:general-list' %}">General</a>
+            <a href="">Medium</a>
+            <a href="">SUV</a>
+            <a href="">Pickup</a>
+            <a href="">Safari</a>
+            <a href="">Bus</a>
+        </div>
+    </div>
+    
+{% endblock %}

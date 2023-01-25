@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% if booking_list %}
+            {% for booking in booking_list %}
+                <li><a href="{{ booking.get_absolute_url }}">{{ booking.client }} ({{ booking.start_date }} - {{ booking.end_date }})</a></li>
+            {% endfor %}
+        {% else %}
+            <p>There are no bookings in the database.</p>
+        {% endif %}
+    </ul>
+{% endblock %}

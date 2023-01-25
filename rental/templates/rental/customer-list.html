@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% if customer_list %}
+            {% for customer in customer_list %}
+                <li><a href="{{ customer.get_absolute_url }}">{{ customer.user.first_name }}</a></li>
+            {% endfor %}
+        {% else %}
+            <p>There are no customers in the database.</p>
+        {% endif %}
+    </ul>
+{% endblock %}

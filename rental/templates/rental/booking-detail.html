@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>View booking</h1>
+  <p><strong>Car:</strong> {{ booking.car.manufacturer }} {{ booking.car.model }}</p>
+  <p><strong>Registration:</strong> {{ booking.car.license_plate }}</p>
+  <p><strong>Created By:</strong> {{ booking.created_by }}</p>
+  <p><strong>Date Borrowed:</strong> {{ booking.start_date }}</p>
+  <p><strong>Due Date:</strong> {{ booking.end_date }}</p>
+  <p><strong>Duration:</strong> {{ booking.get_total_days }} days</p>
+  <p><strong>Total:</strong> Kshs. {{ booking.get_total_cost }}</p>
+  <p><strong>ID:</strong> {{ booking.id }}</p>
+  <p></p>
+{% endblock %}

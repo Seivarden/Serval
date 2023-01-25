@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Choose your car and dates.</h1>
+    <p>Borrower: {{ request.user }}</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+{% endblock %}
